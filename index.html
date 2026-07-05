@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Trans - Premium Bus & Car Rental Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-light: #1a2a44;
+            --gold: #c9a961;
+            --gold-light: #e0c88a;
+            --gold-dark: #a8894a;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --shadow-sm: 0 4px 12px rgba(10, 22, 40, 0.08);
+            --shadow-md: 0 10px 30px rgba(10, 22, 40, 0.12);
+            --shadow-lg: 0 20px 60px rgba(10, 22, 40, 0.15);
+            --shadow-gold: 0 10px 40px rgba(201, 169, 97, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--navy);
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--navy) !important;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(26, 42, 68, 0.75) 100%),
+                        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: var(--white);
+            padding: 0 3rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top right, rgba(201, 169, 97, 0.15) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 169, 97, 0.15);
+            border: 1px solid rgba(201, 169, 97, 0.4);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: var(--gold-light);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero h1 .accent {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--navy);
+            border-color: var(--white);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.8s backwards;
+        }
+
+        .hero-stat h3 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-stat p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        /* ============ SECTIONS ============ */
+        .section {
+            padding: 8rem 3rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+            vertical-align: middle;
+            margin: 0 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .section-title .accent {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--gray);
+            font-weight: 300;
+        }
+
+        /* ============ FLEET ============ */
+        .fleet {
+            background: var(--white);
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .fleet-card {
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+
+        .fleet-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .fleet-image i {
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.9;
+            transition: transform 0.5s;
+        }
+
+        .fleet-card:hover .fleet-image i {
+            transform: scale(1.1);
+        }
+
+        .fleet-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .fleet-content {
+            padding: 2rem;
+        }
+
+        .fleet-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .fleet-seats {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .fleet-facilities {
+            list-style: none;
+            padding-top: 1.2rem;
+            border-top: 1px solid var(--gray-light);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+        }
+
+        .fleet-facilities li {
+            font-size: 0.85rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .fleet-facilities li i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        /* ============ SERVICES ============ */
+        .services {
+            background: var(--cream);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--gold);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--navy);
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ============ ADVANTAGES ============ */
+        .advantages {
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantages::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 97, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .advantages .section-title {
+            color: var(--white);
+        }
+
+        .advantages .section-desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .advantage-card {
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .advantage-card:hover {
+            background: rgba(201, 169, 97, 0.08);
+            border-color: var(--gold);
+            transform: translateY(-8px);
+        }
+
+        .advantage-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.4;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .advantage-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* ============ TESTIMONIALS ============ */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .author-info h5 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* ============ CTA / BOOKING ============ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=1920&q=80') center/cover;
+            opacity: 0.15;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .cta-text h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .cta-text h2 .accent {
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .cta-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cta-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .cta-contact-item:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .cta-contact-item i {
+            width: 45px;
+            height: 45px;
+            background: rgba(201, 169, 97, 0.15);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+        }
+
+        .booking-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .booking-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .booking-form > p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--gray-light);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            background: var(--cream);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--navy);
+            color: var(--white);
+            padding: 1.1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #050d1a;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-section h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .footer-section ul a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-section p {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-section p i {
+            color: var(--gold);
+            margin-top: 0.3rem;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 968px) {
+            .cta-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 5rem 1.5rem;
+            }
+
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .hero-stat h3 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-label::before,
+            .section-label::after {
+                width: 20px;
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-bus"></i></div>
+                Happy Trans
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#fleet">Armada</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#advantages">Keunggulan</a></li>
+                <li><a href="#contact" class="nav-cta">Booking</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i> Premium Transportation Services
+            </div>
+            <h1>Perjalanan Mewah, <span class="accent">Kenangan</span> Tak Terlupakan</h1>
+            <p>Nikmati pengalaman sewa bus pariwisata dan kendaraan premium dengan standar layanan tertinggi. Armada terawat, pengemudi profesional, dan kenyamanan kelas bisnis untuk setiap perjalanan Anda.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Pesan Sekarang
+                </a>
+                <a href="#fleet" class="btn btn-outline">
+                    <i class="fas fa-bus"></i> Lihat Armada
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>500+</h3>
+                    <p>Perjalanan Sukses</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>50+</h3>
+                    <p>Armada Premium</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>10K+</h3>
+                    <p>Pelanggan Puas</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>24/7</h3>
+                    <p>Customer Support</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="section fleet" id="fleet">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Fleet</span>
+                <h2 class="section-title">Armada <span class="accent">Premium</span> Kami</h2>
+                <p class="section-desc">Pilihan kendaraan terbaik dengan fasilitas lengkap untuk kenyamanan perjalanan Anda</p>
+            </div>
+            <div class="fleet-grid">
+                <div class="fleet-card reveal">
+                    <div class="fleet-image">
+                        <span class="fleet-badge">Premium</span>
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Big Bus SHD</h3>
+                        <div class="fleet-seats"><i class="fas fa-user"></i> 50 Kursi</div>
+                        <ul class="fleet-facilities">
+                            <li><i class="fas fa-check"></i> Full AC</li>
+                            <li><i class="fas fa-check"></i> TV & Karaoke</li>
+                            <li><i class="fas fa-check"></i> Reclining Seat</li>
+                            <li><i class="fas fa-check"></i> USB Charger</li>
+                            <li><i class="fas fa-check"></i> WiFi</li>
+                            <li><i class="fas fa-check"></i> Smoking Room</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fleet-card reveal">
+                    <div class="fleet-image">
+                        <span class="fleet-badge">Popular</span>
+                        <i class="fas fa-bus-alt"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Medium Bus Long</h3>
+                        <div class="fleet-seats"><i class="fas fa-user"></i> 39 Kursi</div>
+                        <ul class="fleet-facilities">
+                            <li><i class="fas fa-check"></i> Full AC</li>
+                            <li><i class="fas fa-check"></i> TV & Karaoke</li>
+                            <li><i class="fas fa-check"></i> Reclining Seat</li>
+                            <li><i class="fas fa-check"></i> USB Charger</li>
+                            <li><i class="fas fa-check"></i> Entertainment</li>
+                            <li><i class="fas fa-check"></i> Bagasi Luas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fleet-card reveal">
+                    <div class="fleet-image">
+                        <i class="fas fa-shuttle-van"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Medium Bus</h3>
+                        <div class="fleet-seats"><i class="fas fa-user"></i> 33 Kursi</div>
+                        <ul class="fleet-facilities">
+                            <li><i class="fas fa-check"></i> Full AC</li>
+                            <li><i class="fas fa-check"></i> TV & Karaoke</li>
+                            <li><i class="fas fa-check"></i> Reclining Seat</li>
+                            <li><i class="fas fa-check"></i> USB Charger</li>
+                            <li><i class="fas fa-check"></i> Audio System</li>
+                            <li><i class="fas fa-check"></i> Comfortable</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fleet-card reveal">
+                    <div class="fleet-image">
+                        <i class="fas fa-van-shuttle"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Elf Long</h3>
+                        <div class="fleet-seats"><i class="fas fa-user"></i> 19 Kursi</div>
+                        <ul class="fleet-facilities">
+                            <li><i class="fas fa-check"></i> Full AC</li>
+                            <li><i class="fas fa-check"></i> TV & Audio</li>
+                            <li><i class="fas fa-check"></i> Reclining Seat</li>
+                            <li><i class="fas fa-check"></i> USB Charger</li>
+                            <li><i class="fas fa-check"></i> Compact</li>
+                            <li><i class="fas fa-check"></i> Efficient</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fleet-card reveal">
+                    <div class="fleet-image">
+                        <span class="fleet-badge">Luxury</span>
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Toyota Hiace</h3>
+                        <div class="fleet-seats"><i class="fas fa-user"></i> 14 Kursi</div>
+                        <ul class="fleet-facilities">
+                            <li><i class="fas fa-check"></i> Dual AC</li>
+                            <li><i class="fas fa-check"></i> TV & Audio</li>
+                            <li><i class="fas fa-check"></i> Captain Seat</li>
+                            <li><i class="fas fa-check"></i> Sliding Door</li>
+                            <li><i class="fas fa-check"></i> USB Charger</li>
+                            <li><i class="fas fa-check"></i> Premium</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fleet-card reveal">
+                    <div class="fleet-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="fleet-content">
+                        <h3>Toyota Innova</h3>
+                        <div class="fleet-seats"><i class="fas fa-user"></i> 6 Kursi</div>
+                        <ul class="fleet-facilities">
+                            <li><i class="fas fa-check"></i> Full AC</li>
+                            <li><i class="fas fa-check"></i> Audio System</li>
+                            <li><i class="fas fa-check"></i> Reclining Seat</li>
+                            <li><i class="fas fa-check"></i> USB Charger</li>
+                            <li><i class="fas fa-check"></i> Private</li>
+                            <li><i class="fas fa-check"></i> Comfortable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Services</span>
+                <h2 class="section-title">Layanan <span class="accent">Terpadu</span></h2>
+                <p class="section-desc">Solusi transportasi lengkap untuk berbagai kebutuhan perjalanan Anda</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-bus"></i></div>
+                    <h4>Sewa Bus Pariwisata</h4>
+                    <p>Armada besar untuk rombongan, wisata keluarga, study tour, dan perjalanan jarak jauh dengan kenyamanan maksimal.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-van-shuttle"></i></div>
+                    <h4>Sewa Elf & Hiace</h4>
+                    <p>Solusi transportasi premium untuk kelompok menengah dengan fasilitas lengkap dan pengemudi profesional.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-car"></i></div>
+                    <h4>Mobil Pribadi & Premium</h4>
+                    <p>Pilihan mobil eksklusif untuk kebutuhan bisnis, airport transfer, dan perjalanan pribadi dengan standar VIP.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h4>Transportasi Event</h4>
+                    <p>Layanan khusus untuk pernikahan, gathering perusahaan, konferensi, dan acara besar lainnya.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-plane"></i></div>
+                    <h4>Antar Jemput Bandara</h4>
+                    <p>Layanan transfer bandara, terminal, dan hotel dengan ketepatan waktu dan kenyamanan terjamin.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>Paket Wisata</h4>
+                    <p>Paket perjalanan lengkap dengan armada, driver, dan itinerary yang dirancang khusus untuk Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages" id="advantages">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">5 Keunggulan <span class="accent">Utama</span></h2>
+                <p class="section-desc">Komitmen kami untuk memberikan layanan transportasi terbaik dengan standar premium</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card reveal">
+                    <div class="advantage-number">01</div>
+                    <h3>Harga Transparan</h3>
+                    <p>Struktur harga yang jelas dan kompetitif tanpa biaya tersembunyi. Dapatkan penawaran terbaik dengan kualitas terjamin.</p>
+                </div>
+                <div class="advantage-card reveal">
+                    <div class="advantage-number">02</div>
+                    <h3>Keamanan Prioritas</h3>
+                    <p>Semua unit menjalani inspeksi rutin dengan surat-surat lengkap. Keselamatan Anda adalah tanggung jawab kami.</p>
+                </div>
+                <div class="advantage-card reveal">
+                    <div class="advantage-number">03</div>
+                    <h3>Driver Profesional</h3>
+                    <p>Pengemudi berpengalaman dengan pengetahuan rute luas, bersikap ramah, dan terlatih dalam situasi darurat.</p>
+                </div>
+                <div class="advantage-card reveal">
+                    <div class="advantage-number">04</div>
+                    <h3>Layanan 24 Jam</h3>
+                    <p>Tim customer service siap melayani konsultasi, pemesanan, dan bantuan perjalanan kapan saja Anda butuhkan.</p>
+                </div>
+                <div class="advantage-card reveal">
+                    <div class="advantage-number">05</div>
+                    <h3>Booking Cepat</h3>
+                    <p>Proses pemesanan yang mudah dan cepat. Cukup hubungi kami, dan tim akan memproses dalam hitungan menit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">Kata <span class="accent">Mereka</span></h2>
+                <p class="section-desc">Pengalaman nyata dari pelanggan yang telah mempercayakan perjalanan mereka kepada kami</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Pelayanan sangat memuaskan! Armada bersih, driver ramah dan profesional. Perjalanan wisata kantor kami jadi sangat berkesan. Pasti akan pakai jasa mereka lagi.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <h5>Andi Saputra</h5>
+                            <span>HR Manager, PT Maju Jaya</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Bus-nya nyaman banget, AC dingin, fasilitas lengkap. Driver-nya sabar dan tahu jalan. Recommended banget untuk rombongan keluarga besar!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SR</div>
+                        <div class="author-info">
+                            <h5>Siti Rahayu</h5>
+                            <span>Family Trip Organizer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="quote-icon">"</div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Sudah 3 kali pakai jasa Happy Trans untuk event perusahaan. Selalu on time, armada premium, dan harga sangat reasonable. Top service!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BW</div>
+                        <div class="author-info">
+                            <h5>Budi Wijaya</h5>
+                            <span>Event Coordinator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Booking Section -->
+    <section class="section cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text reveal">
+                    <h2>Siap Memulai <span class="accent">Perjalanan</span> Anda?</h2>
+                    <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk perjalanan impian Anda. Tim kami siap melayani 24/7.</p>
+                    <div class="cta-contact">
+                        <a href="tel:+6281234567890" class="cta-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">Call Us</div>
+                                <div style="font-weight: 600;">+62 812-3456-7890</div>
+                            </div>
+                        </a>
+                        <a href="mailto:info@happytrans.id" class="cta-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">Email Us</div>
+                                <div style="font-weight: 600;">info@happytrans.id</div>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/6281234567890" class="cta-contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">WhatsApp</div>
+                                <div style="font-weight: 600;">Chat Now</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="booking-form reveal">
+                    <h3>Quick Booking</h3>
+                    <p>Isi form di bawah, kami akan segera menghubungi Anda</p>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" placeholder="Nama lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <label>No. HP</label>
+                                <input type="tel" placeholder="08xx-xxxx-xxxx" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Pilih Armada</label>
+                            <select required>
+                                <option value="">-- Pilih Armada --</option>
+                                <option>Big Bus (50 Kursi)</option>
+                                <option>Medium Bus Long (39 Kursi)</option>
+                                <option>Medium Bus (33 Kursi)</option>
+                                <option>Elf Long (19 Kursi)</option>
+                                <option>Toyota Hiace (14 Kursi)</option>
+                                <option>Toyota Innova (6 Kursi)</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Tanggal Berangkat</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Durasi (Hari)</label>
+                                <input type="number" placeholder="1" min="1" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Detail Perjalanan</label>
+                            <textarea rows="3" placeholder="Tujuan, jumlah penumpang, dll"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">
+                            <i class="fas fa-paper-plane"></i> Kirim Permintaan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-bus"></i></div>
+                    Happy Trans
+                </div>
+                <p>Penyedia layanan transportasi premium dengan komitmen memberikan pengalaman perjalanan terbaik, aman, dan nyaman untuk setiap pelanggan.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#fleet">Armada</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#advantages">Keunggulan</a></li>
+                    <li><a href="#contact">Booking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Sewa Bus Pariwisata</a></li>
+                    <li><a href="#">Sewa Elf & Hiace</a></li>
+                    <li><a href="#">Mobil Premium</a></li>
+                    <li><a href="#">Event Transport</a></li>
+                    <li><a href="#">Airport Transfer</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Kontak</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Sudirman No. 123, Jakarta Pusat 10220</p>
+                <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@happytrans.id</p>
+                <p><i class="fas fa-clock"></i> 24/7 Online Support</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Happy Trans. All rights reserved. | PT. Transportasi Nusantara Premium</p>
+            <p>Designed with <i class="fas fa-heart" style="color: var(--gold);"></i> for excellence</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Terima kasih! Permintaan booking Anda telah kami terima. Tim kami akan segera menghubungi Anda.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
